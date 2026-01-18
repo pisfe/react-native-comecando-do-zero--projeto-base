@@ -1,20 +1,15 @@
 import React from "react";
 import Texto from "../../../componentes/Texto";
 import { Image,View } from "react-native-web";
-import { StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 
-export default function Itens({titulo, lista}){
-    return <>
-    <Texto>{titulo}</Texto>
-    {lista.map(({nome, imagem})=> {
-        return <View key={nome} style={estilos.item}>
+export default function Itens ({item: {nome, imagem}}){
+
+    return <View style={estilos.item}>
             <Image source={imagem} style={estilos.imagem}></Image>
             <Texto style={estilos.titulo}>{nome}</Texto>
-            
         </View>
-    })}
     
-    </>;
 }
 
 
